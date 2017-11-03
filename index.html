@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next mist use-motion" lang="">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -80,11 +80,12 @@
 
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="成长日志">
 <meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="成长日志">
+<meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="成长日志">
 
 
 
@@ -100,7 +101,7 @@
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
       userId: '0',
-      author: 'Author'
+      author: 'wangjun'
     },
     algolia: {
       applicationID: '',
@@ -120,7 +121,7 @@
 
 
 
-  <title>Hexo</title>
+  <title>成长日志</title>
   
 
 
@@ -132,7 +133,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -151,12 +152,12 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Hexo</span>
+        <span class="site-title">成长日志</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
       
-        <p class="site-subtitle"></p>
+        <p class="site-subtitle">不积小步无以至千里</p>
       
   </div>
 
@@ -181,7 +182,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            首页
           </a>
         </li>
       
@@ -191,7 +192,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            归档
           </a>
         </li>
       
@@ -231,13 +232,13 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/03/搭建自己的博客/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
+      <meta itemprop="name" content="WJ">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="成长日志">
     </span>
 
     
@@ -247,7 +248,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/11/03/搭建自己的博客/" itemprop="url">Unbenannt</a></h1>
+                <a class="post-title-link" href="/2017/11/03/搭建自己的博客/" itemprop="url">利用Hexo+Node.js+GitPage搭建个人博客</a></h1>
         
 
         <div class="post-meta">
@@ -257,9 +258,9 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-03T11:24:20+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-03T11:24:20+08:00">
                 2017-11-03
               </time>
             
@@ -299,65 +300,59 @@
       
         
           
-            <p>###利用Hexo+GitPage，搭建博客</p>
-<p>前置条件<a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a>+<a href="https://hexo.io/zh-cn/" target="_blank" rel="external">Hexo</a>+<a href="https://github.com" target="_blank" rel="external">Git</a></p>
+            <p>###利用Hexo+GitPage，搭建博客<br>前置条件<a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a>+<a href="https://hexo.io/zh-cn/" target="_blank" rel="external">Hexo</a>+<a href="https://github.com" target="_blank" rel="external">Git</a></p>
 <p>#####1. 安装<a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a>，官网下载安装即可。</p>
 <p>#####2. 安装<a href="https://hexo.io/zh-cn/" target="_blank" rel="external">Hexo</a>，官网也有安装指示。</p>
 <ol>
 <li><code>sudo npm install -g hexo</code>，记得带上<code>sudo</code>，否则会报权限问题。<br><img src="http://upload-images.jianshu.io/upload_images/761142-563714fb1f48d592.gif?imageMogr2/auto-orient/strip" alt="安装Hexo"></li>
 </ol>
-<hr>
 <ol>
-<li>初始化一个blog，选一个本地目录cd进去之后执行init命令<br><img src="http://upload-images.jianshu.io/upload_images/761142-60c3e6471402d07d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="初始化"><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ cd xxx</div><div class="line">$ hexo init</div></pre></td></tr></table></figure>
+<li>初始化一个blog，选一个本地目录cd进去之后执行init命令<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ cd xxx</div><div class="line">$ hexo init</div></pre></td></tr></table></figure>
 </li>
 </ol>
-<hr>
+<p><img src="http://upload-images.jianshu.io/upload_images/761142-60c3e6471402d07d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="初始化"></p>
 <ol>
-<li>安装依赖，这一步记得<em><strong>先进入刚刚初始化的blog目录下操作</strong></em><br><img src="http://upload-images.jianshu.io/upload_images/761142-99697209cf6bb7c3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="先进入目录"><br><img src="http://upload-images.jianshu.io/upload_images/761142-a7eb00075f68d479.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="再安装依赖"><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">先cd，再npm install</div></pre></td></tr></table></figure>
+<li>安装依赖，这一步记得<em><strong>先进入刚刚初始化的blog目录下操作</strong></em><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">先cd，再npm install</div></pre></td></tr></table></figure>
 </li>
 </ol>
-<hr>
+<p><img src="http://upload-images.jianshu.io/upload_images/761142-99697209cf6bb7c3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="先进入目录"><br><img src="http://upload-images.jianshu.io/upload_images/761142-a7eb00075f68d479.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="再安装依赖"></p>
 <ol>
-<li>生成静态页面，在当前目录执行命令<br><img src="http://upload-images.jianshu.io/upload_images/761142-417a669a4872cb39.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="生成静态页面"><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo g (or hexo generate)</div></pre></td></tr></table></figure>
+<li>生成静态页面，在当前目录执行命令<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo g (or hexo generate)</div></pre></td></tr></table></figure>
 </li>
 </ol>
-<hr>
+<p><img src="http://upload-images.jianshu.io/upload_images/761142-417a669a4872cb39.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="生成静态页面"></p>
 <ol>
-<li>发布<br><img src="http://upload-images.jianshu.io/upload_images/761142-a1fdd8a12835af52.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="发布"><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo s (or hexo service)</div></pre></td></tr></table></figure>
+<li>发布<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo s (or hexo service)</div></pre></td></tr></table></figure>
 </li>
 </ol>
-<hr>
+<p><img src="http://upload-images.jianshu.io/upload_images/761142-a1fdd8a12835af52.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="发布"></p>
 <ol>
 <li>校验，浏览器打开<a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a><br><img src="http://upload-images.jianshu.io/upload_images/761142-f76cab44752e6554.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="校验发布"></li>
 </ol>
-<hr>
 <p>#####3.关联到Github</p>
 <ol>
-<li>在自己的Github上新增一个<code>repository</code>，命名规则为<code>账户名.github.io</code><br><img src="http://upload-images.jianshu.io/upload_images/761142-dd57f096438afa3f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="新增项目空间"></li>
-</ol>
-<hr>
-<ol>
-<li>将<code>git</code>配置到<code>Hexo</code>里面去.<br>还是在刚刚初始化的<code>blog</code>目录下，找到<code>_config.yml</code>文件，使用<code>vim</code>打开编辑，将<code>git</code>信息编辑到配置文件底部的<code>deploy:</code>里面去<br><img src="http://upload-images.jianshu.io/upload_images/761142-ce3f31ac2ab7f908.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="编辑配置文件"><br><img src="http://upload-images.jianshu.io/upload_images/761142-47a358236171ac77.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="配置文件内容"><br><img src="http://upload-images.jianshu.io/upload_images/761142-c980bb3ad2c5f8cb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="编辑完成"></li>
-</ol>
-<hr>
-<ol>
-<li>重新生成静态页面<br><img src="http://upload-images.jianshu.io/upload_images/761142-ee6dd142ca800dce.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="重新生成"><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo g (or hexo generate)</div></pre></td></tr></table></figure>
+<li><p>在自己的Github上新增一个<code>repository</code>，命名规则为<code>账户名.github.io</code><br><img src="http://upload-images.jianshu.io/upload_images/761142-dd57f096438afa3f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="新增项目空间"></p>
+</li>
+<li><p>将<code>git</code>配置到<code>Hexo</code>里面去.<br>还是在刚刚初始化的<code>blog</code>目录下，找到<code>_config.yml</code>文件，使用<code>vim</code>打开编辑，将<code>git</code>信息编辑到配置文件底部的<code>deploy:</code>里面去<br><img src="http://upload-images.jianshu.io/upload_images/761142-ce3f31ac2ab7f908.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="编辑配置文件"><br><img src="http://upload-images.jianshu.io/upload_images/761142-47a358236171ac77.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="配置文件内容"><br><img src="http://upload-images.jianshu.io/upload_images/761142-c980bb3ad2c5f8cb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="编辑完成"></p>
 </li>
 </ol>
-<hr>
 <ol>
-<li>配置<br>此时可能会报错，原因是未安装<code>git</code>安装后再执行配置命令即可<br><img src="http://upload-images.jianshu.io/upload_images/761142-de992abafa46adae.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="需要安装git"><br><img src="http://upload-images.jianshu.io/upload_images/761142-495dee34dca4048d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="安装git"><br><img src="http://upload-images.jianshu.io/upload_images/761142-c7475c25e5c62ea3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="重新配置"><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">配置命令</div><div class="line">hexo d (or hexo deploy)</div><div class="line">安装命令</div><div class="line">npm install hexo-deployer-git --save</div><div class="line">``` </div><div class="line">___</div><div class="line">5. 校验</div><div class="line">此时浏览器打开[http://junwangInChina.github.io](http://junwangInChina.github.io)，如果同样出现[http://localhost:4000/](http://localhost:4000/)内容</div><div class="line">，即表示配置无误，注意换成自己的博客地址。</div><div class="line">___</div><div class="line">#####4. 写一篇新的博客</div><div class="line">1. 进入`blog`目录下，使用命令`hexo new &quot;blogname&quot;`创建一篇新的博客</div><div class="line">博客内容可以通过`markdown`编辑器编辑，编辑完成之后，重新生成静态页面</div><div class="line">`hexo g`，然后配置到`github`,`hexo d`</div><div class="line">![发布一篇新的blog](http://upload-images.jianshu.io/upload_images/761142-046584d24b2e5b83.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</div></pre></td></tr></table></figure>
+<li><p>重新生成静态页面<br><img src="http://upload-images.jianshu.io/upload_images/761142-ee6dd142ca800dce.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="重新生成"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo g (or hexo generate)</div></pre></td></tr></table></figure>
+</li>
+<li><p>配置<br>此时可能会报错，原因是未安装<code>git</code>安装后再执行配置命令即可<br><img src="http://upload-images.jianshu.io/upload_images/761142-de992abafa46adae.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="需要安装git"><br><img src="http://upload-images.jianshu.io/upload_images/761142-495dee34dca4048d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="安装git"><br><img src="http://upload-images.jianshu.io/upload_images/761142-c7475c25e5c62ea3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="重新配置"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">配置命令</div><div class="line">hexo d (or hexo deploy)</div><div class="line">安装命令</div><div class="line">npm install hexo-deployer-git --save</div><div class="line">``` </div><div class="line"></div><div class="line">5. 校验</div><div class="line">此时浏览器打开[http://junwangInChina.github.io](http://junwangInChina.github.io)，如果同样出现[http://localhost:4000/](http://localhost:4000/)内容</div><div class="line">，即表示配置无误，注意换成自己的博客地址。</div><div class="line"></div><div class="line">#####4. 写一篇新的博客</div><div class="line">1. 进入`blog`目录下，使用命令`hexo new &quot;blogname&quot;`创建一篇新的博客</div><div class="line">博客内容可以通过`markdown`编辑器编辑，编辑完成之后，重新生成静态页面</div><div class="line">`hexo g`，然后配置到`github`,`hexo d`</div><div class="line">![发布一篇新的blog](http://upload-images.jianshu.io/upload_images/761142-046584d24b2e5b83.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</div></pre></td></tr></table></figure>
 </li>
 </ol>
-<p>$ cd blog<br>$ hexo new “blog name”<br>$ hexo g<br>$ hexo d<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">___</div><div class="line">2. 删除一篇博客</div><div class="line">直接进入`blog`的`sorce/_posts`目录下，删除掉需要删除的博客文件即可</div><div class="line">然后重新生成静态页面，配置</div></pre></td></tr></table></figure></p>
-<p>$ cd blog/source/_posts<br>删除xxx.md<br>$ hexo g<br>$ hexo d<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">___</div><div class="line">#####5. 更换主题Theme</div><div class="line">1. 选择主题</div><div class="line">一般都是在[hexo主题目录](https://hexo.io/themes/)找一款喜欢的</div><div class="line">这里选择[NexT](https://github.com/iissnan/hexo-theme-next)为例，[使用文档](http://theme-next.iissnan.com/)</div><div class="line">___</div><div class="line">2. 下载主题</div><div class="line">进入`blog`目录，执行`git clone https://github.com/iissnan/hexo-theme-next themes/next</div><div class="line">`下载命令</div><div class="line">![下载主题](http://upload-images.jianshu.io/upload_images/761142-4ea8fde6880bc617.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</div></pre></td></tr></table></figure></p>
-<p>$ git clone <a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="external">https://github.com/iissnan/hexo-theme-next</a> themes/next<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">___</div><div class="line">3. 修改`blog`配置</div><div class="line">在`blog`主目录，打开`_config.yml`文件，将其中的`theme: landscape` 修改为 `theme: next`</div><div class="line">![修改配置](http://upload-images.jianshu.io/upload_images/761142-92457b1a80ea79e7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</div></pre></td></tr></table></figure></p>
-<p>$ cd blog<br>$ vim _config.yml<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">___</div><div class="line">4. 测试发布新的主题</div><div class="line">首先需要删掉老的主题缓存`hexo clean`</div><div class="line">然后生成新的静态文件`hexo g`</div><div class="line">最后再配置到`github`,`hexo d`</div><div class="line">配置成功后，到博客首页看看主题生效没[xxx.github.io](https://junwanginchina.github.io/)</div><div class="line">![清除缓存](http://upload-images.jianshu.io/upload_images/761142-2e0fa5b984e64e29.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</div><div class="line">![生成新的静态文件](http://upload-images.jianshu.io/upload_images/761142-9600409f978f65d6.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</div><div class="line">![配置到Github](http://upload-images.jianshu.io/upload_images/761142-b2f6c1d36ecca8c4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</div></pre></td></tr></table></figure></p>
+<p>$ cd blog<br>$ hexo new “blog name”<br>$ hexo g<br>$ hexo d<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">2. 删除一篇博客</div><div class="line">直接进入`blog`的`sorce/_posts`目录下，删除掉需要删除的博客文件即可</div><div class="line">然后重新生成静态页面，配置</div></pre></td></tr></table></figure></p>
+<p>$ cd blog/source/_posts<br>删除xxx.md<br>$ hexo g<br>$ hexo d<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">#####5. 更换主题Theme</div><div class="line">1. 选择主题</div><div class="line">一般都是在[hexo主题目录](https://hexo.io/themes/)找一款喜欢的</div><div class="line">这里选择[NexT](https://github.com/iissnan/hexo-theme-next)为例，[使用文档](http://theme-next.iissnan.com/)</div><div class="line"></div><div class="line">2. 下载主题</div><div class="line">进入`blog`目录，执行`git clone https://github.com/iissnan/hexo-theme-next themes/next</div><div class="line">`下载命令</div><div class="line">![下载主题](http://upload-images.jianshu.io/upload_images/761142-4ea8fde6880bc617.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</div></pre></td></tr></table></figure></p>
+<p>$ git clone <a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="external">https://github.com/iissnan/hexo-theme-next</a> themes/next<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">3. 修改`blog`配置</div><div class="line">在`blog`主目录，打开`_config.yml`文件，将其中的`theme: landscape` 修改为 `theme: next`</div><div class="line">![修改配置](http://upload-images.jianshu.io/upload_images/761142-92457b1a80ea79e7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</div></pre></td></tr></table></figure></p>
+<p>$ cd blog<br>$ vim _config.yml<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">4. 测试发布新的主题</div><div class="line">首先需要删掉老的主题缓存`hexo clean`</div><div class="line">然后生成新的静态文件`hexo g`</div><div class="line">最后再配置到`github`,`hexo d`</div><div class="line">配置成功后，到博客首页看看主题生效没[xxx.github.io](https://junwanginchina.github.io/)</div><div class="line">![清除缓存](http://upload-images.jianshu.io/upload_images/761142-2e0fa5b984e64e29.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</div><div class="line">![生成新的静态文件](http://upload-images.jianshu.io/upload_images/761142-9600409f978f65d6.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</div><div class="line">![配置到Github](http://upload-images.jianshu.io/upload_images/761142-b2f6c1d36ecca8c4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</div></pre></td></tr></table></figure></p>
 <p>$ hexo clean<br>$ hexo g<br>$ hexo d<br>```</p>
-<hr>
 <ol>
-<li>新主题各种配置<br>一般主题<a href="http://theme-next.iissnan.com/" target="_blank" rel="external">使用文档</a>都比较全，按照步骤配置即可<br>#####6. 绑定个人域名</li>
+<li>新主题各种配置<br>一般主题<a href="http://theme-next.iissnan.com/" target="_blank" rel="external">使用文档</a>都比较全，按照步骤配置即可</li>
 </ol>
+<p>#####6. 绑定个人域名</p>
 <ul>
 <li>个人还没到这一步，暂时发布到<code>git</code>上就可以了，有兴趣可以查一下，网上教程很多</li>
 </ul>
@@ -431,7 +426,7 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-author-name" itemprop="name">WJ</p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
@@ -443,7 +438,7 @@
                 <a href="/archives/">
               
                   <span class="site-state-item-count">1</span>
-                  <span class="site-state-item-name">Artikel</span>
+                  <span class="site-state-item-name">日志</span>
                 </a>
               </div>
             
@@ -489,13 +484,13 @@
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  <span class="author" itemprop="copyrightHolder">WJ</span>
 
   
 </div>
 
 
-  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
 
 
@@ -503,7 +498,7 @@
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.3</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.3</div>
 
 
 
